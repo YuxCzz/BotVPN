@@ -1,18 +1,33 @@
-# update dulu
-#apt update -y && apt upgrade -y
+    timedatectl set-timezone Asia/Jakarta || echo -e "${red}Failed to set timezone to Jakarta${neutral}"
 
-# install nodejs + npm
-apt install -y nodejs npm
+    if ! dpkg -s nodejs >/dev/null 2>&1; then
+        curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - || echo -e "${red}Failed to download Node.js setup${neutral}"
+        apt-get install -y nodejs || echo -e "${red}Failed to install Node.js${neutral}"
+    else
+        echo -e "${green}Node.js is already installed, skipping...${neutral}"
+    fi
 
-# install pm2 global
+    if [ ! -f /root/BotVPN/app.js ]; then
+        git clone https://github.com/arivpnstores/BotVPN.git /root/BotVPN
+    fi
+
+npm install -g npm@latest
 npm install -g pm2
 
+    if ! npm list --prefix /root/BotVPN express telegraf axios moment sqlite3 >/dev/null 2>&1; then
+        npm install --prefix /root/BotVPN sqlite3 express crypto telegraf axios dotenv
+    fi
+
+    if [ -n "$(ls -A /root/BotVPN)" ]; then
+        chmod +x /root/BotVPN/*
+    fi
+wget -O /root/BotVPN/ecosystem.config.js "https://raw.githubusercontent.com/arivpnstores/BotVPN/main/ecosystem.config.js"
 # stop dulu servicenya
 systemctl stop sellvpn.service
 
 # nonaktifkan supaya tidak jalan saat boot
 systemctl disable sellvpn.service
-pm2 delete all
+
 # hapus file service dari systemd
 rm -f /etc/systemd/system/sellvpn.service
 
