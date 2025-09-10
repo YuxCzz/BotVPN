@@ -1,20 +1,29 @@
-#!/bin/bash
-cat >/etc/systemd/system/sellvpn.service <<EOF
-[Unit]
-Description=SellVPN Bot Service
-After=network.target
+# update dulu
+apt update -y && apt upgrade -y
 
-[Service]
-Type=simple
-WorkingDirectory=/root/BotVPN
-ExecStart=/usr/bin/node /root/BotVPN/app.js
-Restart=always
-User=root
-Environment=NODE_ENV=production
+# install nodejs + npm
+apt install -y nodejs npm
 
-[Install]
-WantedBy=multi-user.target
-EOF
+# install pm2 global
+npm install -g pm2
+
+# stop dulu servicenya
+systemctl stop sellvpn.service
+
+# nonaktifkan supaya tidak jalan saat boot
+systemctl disable sellvpn.service
+
+# hapus file service dari systemd
+rm -f /etc/systemd/system/sellvpn.service
+
+# reload systemd biar bersih
+systemctl daemon-reload
+systemctl reset-failed
+
+cd /root/BotVPN
+pm2 start ecosystem.config.js
+pm2 save
+cd 
 
 cat >/usr/bin/backup_sellvpn <<'EOF'
 #!/bin/bash
@@ -50,13 +59,8 @@ EOF
 cat >/etc/cron.d/backup_sellvpn <<'EOF'
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 0 * * * root /usr/bin/backup_sellvpn
+0 */1 * * * root /usr/bin/backup_sellvpn
 EOF
 
 chmod +x /usr/bin/backup_sellvpn
-
-systemctl daemon-reload >/dev/null 2>&1
-systemctl enable sellvpn.service >/dev/null 2>&1
-systemctl start sellvpn.service >/dev/null 2>&1
-systemctl restart sellvpn.service >/dev/null 2>&1
 service cron restart
