@@ -1,3 +1,5 @@
+#!/bin/bash  
+cd /root/BotVPN
     timedatectl set-timezone Asia/Jakarta || echo -e "${red}Failed to set timezone to Jakarta${neutral}"
 
     if ! dpkg -s nodejs >/dev/null 2>&1; then
@@ -35,10 +37,9 @@ rm -f /etc/systemd/system/sellvpn.service
 systemctl daemon-reload
 systemctl reset-failed
 
-cd /root/BotVPN
+
 pm2 start ecosystem.config.js
 pm2 save
-cd 
 
 cat >/usr/bin/backup_sellvpn <<'EOF'
 #!/bin/bash
@@ -79,3 +80,4 @@ EOF
 
 chmod +x /usr/bin/backup_sellvpn
 service cron restart
+cd 
