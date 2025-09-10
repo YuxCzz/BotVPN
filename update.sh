@@ -1,5 +1,5 @@
 # update dulu
-apt update -y && apt upgrade -y
+#apt update -y && apt upgrade -y
 
 # install nodejs + npm
 apt install -y nodejs npm
