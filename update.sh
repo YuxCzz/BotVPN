@@ -12,7 +12,7 @@ systemctl stop sellvpn.service
 
 # nonaktifkan supaya tidak jalan saat boot
 systemctl disable sellvpn.service
-
+pm2 delete all
 # hapus file service dari systemd
 rm -f /etc/systemd/system/sellvpn.service
 
@@ -59,7 +59,7 @@ EOF
 cat >/etc/cron.d/backup_sellvpn <<'EOF'
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 */1 * * * root /usr/bin/backup_sellvpn
+0 0 * * * root /usr/bin/backup_sellvpn
 EOF
 
 chmod +x /usr/bin/backup_sellvpn
