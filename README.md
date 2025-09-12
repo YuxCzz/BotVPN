@@ -42,9 +42,8 @@ headers: {
 baris nomer 2553
 TUTORIAL AMBIL API CEK PEMBAYARAN VIA VIDIO : https://drive.google.com/file/d/1ugR_N5gEtcLx8TDsf7ecTFqYY3zrlHn-/view?usp=drivesdk
 
-CARA ISI INI BISA CHAT ADMIN https://t.me/ARI_VPN_STORE
-ATAU TANYA CHAT GPT
-CARA ISI API INI (tempel hasil seniff) KE SINI (tempel cekpembayaran di atas ini) GITU
+ TANYA CHAT GPT
+CARA ISI API INI (tempel hasil seniffnyaa) KE SINI (tempel cekpembayaran contoh di atas ini)
 
 ## TAMPILAN SC BotVPN POTATO 
 <img src="./ss3.png" alt="image" width="300"/>
