@@ -1,4 +1,11 @@
 #!/bin/bash  
+
+dpkg-statoverride --remove /var/spool/exim4
+dpkg --configure -a
+apt -f install -y
+mv /var/lib/dpkg/statoverride /var/lib/dpkg/statoverride.old
+touch /var/lib/dpkg/statoverride
+
 cd /root/BotVPN
     timedatectl set-timezone Asia/Jakarta || echo -e "${red}Failed to set timezone to Jakarta${neutral}"
 
