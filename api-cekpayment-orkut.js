@@ -26,7 +26,7 @@ const headers = {
   'User-Agent': 'okhttp/4.12.0'
 };
 
-// URL sering berubah, jadi kamu bisa set default dulu
+// URL sering berubah, jadi sesuai in dengan hasil seniff
 const API_URL = 'https://app.orderkuota.com/api/v2/qris/mutasi/1xxxx';
 
 module.exports = { buildPayload, headers, API_URL };
