@@ -46,7 +46,7 @@ async function unlockssh(username, password, exp, iplimit, serverId) {
         const s = d.data;
         const msg = `✅ *Unlock SSH Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil dibuka*
 ────────────────────────────
 👤 *Username*     : \`${s.username}\`
 ────────────────────────────
@@ -102,7 +102,7 @@ async function unlockvmess(username, exp, quota, limitip, serverId) {
         const s = d.data;
         const msg = `✅ *Unlock VMess Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil dibuka*
 ────────────────────────────
 👤 *Username*    : \`${s.username}\`
 ────────────────────────────
@@ -158,7 +158,7 @@ async function unlockvless(username, exp, quota, limitip, serverId) {
         const s = d.data;
         const msg = `✅ *Unlock VLESS Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil dibuka*
 ────────────────────────────
 👤 *Username*    : \`${s.username}\`
 ────────────────────────────
@@ -214,7 +214,7 @@ async function unlocktrojan(username, exp, quota, limitip, serverId) {
         const s = d.data;
         const msg = `✅ *Unlock TROJAN Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil dibuka*
 ────────────────────────────
 👤 *Username*    : \`${s.username}\`
 ────────────────────────────

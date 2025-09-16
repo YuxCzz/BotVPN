@@ -46,7 +46,7 @@ async function lockssh(username, password, exp, iplimit, serverId) {
         const s = d.data;
         const msg = `✅ *Lock SSH Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil dikunci*
 ────────────────────────────
 👤 *Username*     : \`${s.username}\`
 ────────────────────────────
@@ -102,7 +102,7 @@ async function lockvmess(username, exp, quota, limitip, serverId) {
         const s = d.data;
         const msg = `✅ *Lock VMess Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil dikunci*
 ────────────────────────────
 👤 *Username*    : \`${s.username}\`
 ────────────────────────────
@@ -158,7 +158,7 @@ async function lockvless(username, exp, quota, limitip, serverId) {
         const s = d.data;
         const msg = `✅ *Lock VLESS Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil dikunci*
 ────────────────────────────
 👤 *Username*    : \`${s.username}\`
 ────────────────────────────
@@ -214,7 +214,7 @@ async function locktrojan(username, exp, quota, limitip, serverId) {
         const s = d.data;
         const msg = `✅ *Lock TROJAN Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil dikunci*
 ────────────────────────────
 👤 *Username*    : \`${s.username}\`
 ────────────────────────────
