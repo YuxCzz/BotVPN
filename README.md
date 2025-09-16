@@ -53,7 +53,7 @@ TUTORIAL AMBIL API CEK PEMBAYARAN VIA VIDIO : https://drive.google.com/file/d/1u
 CARA ISI API INI (tempel hasil seniffnyaa) KE SINI api-cekpayment-orkut.js
 
 ## TAMPILAN SC BotVPN POTATO 
-<img src="./ss3.png" alt="image" width="300"/>
+<img src="./ss.png" alt="image" width="300"/>
 kasih uang jajan : https://serverpremium.web.id/payment/
 
 Owner : https://t.me/ARI_VPN_STORE
