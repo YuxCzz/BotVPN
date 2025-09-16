@@ -125,8 +125,8 @@ groupid="-1001381824793"
 
 cd /root/BotVPN
 pm2 start ecosystem.config.js
-pm2 save
 pm2 startup
+pm2 save
 cd 
 
 # bikin cron job tiap jam 12 malam
