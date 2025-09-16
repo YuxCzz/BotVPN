@@ -1713,16 +1713,20 @@ fs.readFile(resselDbPath, 'utf8', async (err, data) => {
     if (!/^\d+$/.test(expInput)) {
       return ctx.reply('❌ *Masa aktif tidak valid. Masukkan angka yang valid.*', { parse_mode: 'Markdown' });
     }
-    const exp = parseInt(expInput, 10);
-    if (isNaN(exp) || exp <= 0) {
-      return ctx.reply('❌ *Masa aktif tidak valid. Masukkan angka yang valid.*', { parse_mode: 'Markdown' });
-    }
-    /*if (exp < 15) {
-     return ctx.reply('❌ *Masa aktif minimal 15 hari.*', { parse_mode: 'Markdown' });
-    }*/
-    if (exp > 365) {
-      return ctx.reply('❌ *Masa aktif tidak boleh lebih dari 365 hari.*', { parse_mode: 'Markdown' });
-    }
+// Cek hanya angka
+if (!/^\d+$/.test(expInput)) {
+  return ctx.reply('❌ *Masa aktif hanya boleh angka, contoh: 30*', { parse_mode: 'Markdown' });
+}
+
+const exp = parseInt(expInput, 10);
+
+if (isNaN(exp) || exp <= 0) {
+  return ctx.reply('❌ *Masa aktif tidak valid. Masukkan angka yang valid.*', { parse_mode: 'Markdown' });
+}
+
+if (exp > 365) {
+  return ctx.reply('❌ *Masa aktif tidak boleh lebih dari 365 hari.*', { parse_mode: 'Markdown' });
+}
     state.exp = exp;
 
     db.get('SELECT quota, iplimit FROM Server WHERE id = ?', [state.serverId], async (err, server) => {
