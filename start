@@ -108,9 +108,14 @@ server_app() {
             echo -e "${red}DATA QRIS tidak boleh kosong. Silakan coba lagi.${neutral}"
         fi
     done
+    while [ -z "$groupid" ]; do
+        read -p "Masukkan ID GROUP NOTIF : " groupid
+        if [ -z "$groupid" ]; then
+            echo -e "${red}DATA QRIS tidak boleh kosong. Silakan coba lagi.${neutral}"
+        fi
+    done
 merchantid="NONE"
 apikey="NONE"
-groupid="-1001381824793"
     rm -f /root/BotVPN/.vars.json
     echo "{
   \"BOT_TOKEN\": \"$token\",
