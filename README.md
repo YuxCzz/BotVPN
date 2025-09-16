@@ -39,11 +39,10 @@ headers: {
 }
  });
   ```
-baris nomer 2553
+EDIT FILE DI api-cekpayment-orkut.js
 TUTORIAL AMBIL API CEK PEMBAYARAN VIA VIDIO : https://drive.google.com/file/d/1ugR_N5gEtcLx8TDsf7ecTFqYY3zrlHn-/view?usp=drivesdk
-
  TANYA CHAT GPT
-CARA ISI API INI (tempel hasil seniffnyaa) KE SINI (tempel cekpembayaran contoh di atas ini)
+CARA ISI API INI (tempel hasil seniffnyaa) KE SINI api-cekpayment-orkut.js
 
 ## TAMPILAN SC BotVPN POTATO 
 <img src="./ss3.png" alt="image" width="300"/>
