@@ -49,7 +49,8 @@ module.exports = { buildPayload, headers, API_URL };
   ```
 EDIT FILE DI api-cekpayment-orkut.js
 TUTORIAL AMBIL API CEK PEMBAYARAN VIA VIDIO : https://drive.google.com/file/d/1ugR_N5gEtcLx8TDsf7ecTFqYY3zrlHn-/view?usp=drivesdk
-TANYA CHAT GPT
+
+TANYA CHAT GPT GINI!!!!
 ```bash
 ubah data senif ini
  POST https://app.orderkuota.com/api/v2/qris/mutasi/4xxxxx HTTP/2.0 
@@ -60,7 +61,7 @@ content-length: 650
 accept-encoding: gzip 
 user-agent: okhttp/4.12.0 
  
-app_reg_id=-----------&phone_uuid=------&phone_model=-----&requests%5Bqris_history%5D%5Bketerangan%5D=&requests%5Bqris_history%5D%5Bjumlah%5D=&request_time=-----&phone_android_version=15&app_version_code=250911&auth_username=adisaputra94&requests%5Bqris_history%5D%5Bpage%5D=1&auth_token=473713%3AW3KDPx5Z8nuFsYRvp4oqLOQg0bzGl9md&app_version_name=25.09.11&ui_mode=light&requests%5Bqris_history%5D%5Bdari_tanggal%5D=&requests%5B0%5D=account&requests%5Bqris_history%5D%5Bke_tanggal%5D= 
+app_reg_id=-----------&phone_uuid=------&phone_model=-----&requests%5Bqris_history%5D%5Bketerangan%5D=&requests%5Bqris_history%5D%5Bjumlah%5D=&request_time=-----&phone_android_version=15&app_version_code=250911&auth_username=-----&requests%5Bqris_history%5D%5Bpage%5D=1&auth_token=-------&app_version_name=25.09.11&ui_mode=light&requests%5Bqris_history%5D%5Bdari_tanggal%5D=&requests%5B0%5D=account&requests%5Bqris_history%5D%5Bke_tanggal%5D= 
 
 menjadi kayak gini 
 // api-cekpayment-orkut.js
